@@ -1,0 +1,164 @@
+2023-02-21T19:34:48.022+0530 [INFO]  Terraform version: 1.3.7
+2023-02-21T19:34:48.022+0530 [DEBUG] using github.com/hashicorp/go-tfe v1.9.0
+2023-02-21T19:34:48.022+0530 [DEBUG] using github.com/hashicorp/hcl/v2 v2.15.0
+2023-02-21T19:34:48.022+0530 [DEBUG] using github.com/hashicorp/terraform-config-inspect v0.0.0-20210209133302-4fd17a0faac2
+2023-02-21T19:34:48.022+0530 [DEBUG] using github.com/hashicorp/terraform-svchost v0.0.0-20200729002733-f050f53b9734
+2023-02-21T19:34:48.022+0530 [DEBUG] using github.com/zclconf/go-cty v1.12.1
+2023-02-21T19:34:48.022+0530 [INFO]  Go runtime version: go1.19.4
+2023-02-21T19:34:48.022+0530 [INFO]  CLI args: []string{"terraform", "apply", "-auto-approve"}
+2023-02-21T19:34:48.022+0530 [DEBUG] Attempting to open CLI config file: /Users/gayaz/.terraformrc
+2023-02-21T19:34:48.022+0530 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2023-02-21T19:34:48.023+0530 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2023-02-21T19:34:48.023+0530 [DEBUG] ignoring non-existing provider search directory /Users/gayaz/.terraform.d/plugins
+2023-02-21T19:34:48.023+0530 [DEBUG] ignoring non-existing provider search directory /Users/gayaz/Library/Application Support/io.terraform/plugins
+2023-02-21T19:34:48.023+0530 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2023-02-21T19:34:48.024+0530 [INFO]  CLI command args: []string{"apply", "-auto-approve"}
+2023-02-21T19:34:48.037+0530 [DEBUG] New state was assigned lineage "a93e40ea-e6f6-4ed1-12fc-39f666e14c32"
+2023-02-21T19:34:48.058+0530 [DEBUG] checking for provisioner in "."
+2023-02-21T19:34:48.059+0530 [DEBUG] checking for provisioner in "/opt/homebrew/bin"
+2023-02-21T19:34:48.062+0530 [INFO]  backend/local: starting Apply operation
+2023-02-21T19:34:48.068+0530 [DEBUG] created provider logger: level=debug
+2023-02-21T19:34:48.068+0530 [INFO]  provider: configuring client automatic mTLS
+2023-02-21T19:34:48.085+0530 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 args=[.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11]
+2023-02-21T19:34:48.087+0530 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 pid=32690
+2023-02-21T19:34:48.087+0530 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11
+2023-02-21T19:34:48.103+0530 [INFO]  provider.terraform-provider-fivetran_v0.6.11: configuring server automatic mTLS: timestamp=2023-02-21T19:34:48.103+0530
+2023-02-21T19:34:48.118+0530 [DEBUG] provider: using plugin: version=5
+2023-02-21T19:34:48.118+0530 [DEBUG] provider.terraform-provider-fivetran_v0.6.11: plugin address: network=unix address=/var/folders/5s/svmr4mgn3118j4xkvr02tkmr0000gn/T/plugin1219669297 timestamp=2023-02-21T19:34:48.118+0530
+2023-02-21T19:34:48.139+0530 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2023-02-21T19:34:48.140+0530 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 pid=32690
+2023-02-21T19:34:48.140+0530 [DEBUG] provider: plugin exited
+2023-02-21T19:34:48.140+0530 [DEBUG] Building and walking validate graph
+2023-02-21T19:34:48.141+0530 [DEBUG] ProviderTransformer: "fivetran_group.group" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.141+0530 [DEBUG] ProviderTransformer: "fivetran_destination.dest" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.142+0530 [DEBUG] ReferenceTransformer: "fivetran_group.group" references: []
+2023-02-21T19:34:48.142+0530 [DEBUG] ReferenceTransformer: "fivetran_destination.dest" references: [fivetran_group.group var.snowflake_pass]
+2023-02-21T19:34:48.142+0530 [DEBUG] ReferenceTransformer: "var.key" references: []
+2023-02-21T19:34:48.142+0530 [DEBUG] ReferenceTransformer: "var.secret" references: []
+2023-02-21T19:34:48.142+0530 [DEBUG] ReferenceTransformer: "local.version (expand)" references: []
+2023-02-21T19:34:48.142+0530 [DEBUG] ReferenceTransformer: "var.snowflake_pass" references: []
+2023-02-21T19:34:48.142+0530 [DEBUG] ReferenceTransformer: "output.new_group_id (expand)" references: [fivetran_destination.dest]
+2023-02-21T19:34:48.142+0530 [DEBUG] ReferenceTransformer: "output.new_status (expand)" references: [fivetran_destination.dest]
+2023-02-21T19:34:48.142+0530 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/fivetran/fivetran\"]" references: [var.key var.secret]
+2023-02-21T19:34:48.143+0530 [DEBUG] Starting graph walk: walkValidate
+2023-02-21T19:34:48.145+0530 [DEBUG] created provider logger: level=debug
+2023-02-21T19:34:48.145+0530 [INFO]  provider: configuring client automatic mTLS
+2023-02-21T19:34:48.150+0530 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 args=[.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11]
+2023-02-21T19:34:48.152+0530 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 pid=32691
+2023-02-21T19:34:48.152+0530 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11
+2023-02-21T19:34:48.160+0530 [INFO]  provider.terraform-provider-fivetran_v0.6.11: configuring server automatic mTLS: timestamp=2023-02-21T19:34:48.160+0530
+2023-02-21T19:34:48.175+0530 [DEBUG] provider.terraform-provider-fivetran_v0.6.11: plugin address: address=/var/folders/5s/svmr4mgn3118j4xkvr02tkmr0000gn/T/plugin2544100144 network=unix timestamp=2023-02-21T19:34:48.175+0530
+2023-02-21T19:34:48.175+0530 [DEBUG] provider: using plugin: version=5
+2023-02-21T19:34:48.198+0530 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2023-02-21T19:34:48.199+0530 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 pid=32691
+2023-02-21T19:34:48.199+0530 [DEBUG] provider: plugin exited
+2023-02-21T19:34:48.199+0530 [INFO]  backend/local: apply calling Plan
+2023-02-21T19:34:48.199+0530 [DEBUG] Building and walking plan graph for NormalMode
+2023-02-21T19:34:48.199+0530 [DEBUG] ProviderTransformer: "fivetran_destination.dest (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.199+0530 [DEBUG] ProviderTransformer: "fivetran_group.group (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.199+0530 [DEBUG] ReferenceTransformer: "fivetran_group.group (expand)" references: []
+2023-02-21T19:34:48.199+0530 [DEBUG] ReferenceTransformer: "local.version (expand)" references: []
+2023-02-21T19:34:48.199+0530 [DEBUG] ReferenceTransformer: "output.new_status (expand)" references: [fivetran_destination.dest (expand)]
+2023-02-21T19:34:48.199+0530 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/fivetran/fivetran\"]" references: [var.key var.secret]
+2023-02-21T19:34:48.199+0530 [DEBUG] ReferenceTransformer: "fivetran_destination.dest (expand)" references: [fivetran_group.group (expand) var.snowflake_pass]
+2023-02-21T19:34:48.199+0530 [DEBUG] ReferenceTransformer: "var.key" references: []
+2023-02-21T19:34:48.199+0530 [DEBUG] ReferenceTransformer: "var.secret" references: []
+2023-02-21T19:34:48.199+0530 [DEBUG] ReferenceTransformer: "var.snowflake_pass" references: []
+2023-02-21T19:34:48.199+0530 [DEBUG] ReferenceTransformer: "output.new_group_id (expand)" references: [fivetran_destination.dest (expand)]
+2023-02-21T19:34:48.200+0530 [DEBUG] Starting graph walk: walkPlan
+2023-02-21T19:34:48.200+0530 [DEBUG] created provider logger: level=debug
+2023-02-21T19:34:48.200+0530 [INFO]  provider: configuring client automatic mTLS
+2023-02-21T19:34:48.206+0530 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 args=[.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11]
+2023-02-21T19:34:48.207+0530 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 pid=32692
+2023-02-21T19:34:48.207+0530 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11
+2023-02-21T19:34:48.216+0530 [INFO]  provider.terraform-provider-fivetran_v0.6.11: configuring server automatic mTLS: timestamp=2023-02-21T19:34:48.216+0530
+2023-02-21T19:34:48.231+0530 [DEBUG] provider.terraform-provider-fivetran_v0.6.11: plugin address: address=/var/folders/5s/svmr4mgn3118j4xkvr02tkmr0000gn/T/plugin3898416223 network=unix timestamp=2023-02-21T19:34:48.231+0530
+2023-02-21T19:34:48.231+0530 [DEBUG] provider: using plugin: version=5
+2023-02-21T19:34:48.248+0530 [DEBUG] Resource instance state not found for node "fivetran_group.group", instance fivetran_group.group
+2023-02-21T19:34:48.248+0530 [DEBUG] ReferenceTransformer: "fivetran_group.group" references: []
+2023-02-21T19:34:48.248+0530 [DEBUG] refresh: fivetran_group.group: no state, so not refreshing
+2023-02-21T19:34:48.250+0530 [DEBUG] Resource instance state not found for node "fivetran_destination.dest", instance fivetran_destination.dest
+2023-02-21T19:34:48.250+0530 [INFO]  ReferenceTransformer: reference not found: "var.snowflake_pass"
+2023-02-21T19:34:48.250+0530 [DEBUG] ReferenceTransformer: "fivetran_destination.dest" references: []
+2023-02-21T19:34:48.250+0530 [DEBUG] refresh: fivetran_destination.dest: no state, so not refreshing
+2023-02-21T19:34:48.253+0530 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2023-02-21T19:34:48.254+0530 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 pid=32692
+2023-02-21T19:34:48.254+0530 [DEBUG] provider: plugin exited
+2023-02-21T19:34:48.254+0530 [DEBUG] building apply graph to check for errors
+2023-02-21T19:34:48.254+0530 [DEBUG] Resource state not found for node "fivetran_group.group", instance fivetran_group.group
+2023-02-21T19:34:48.254+0530 [DEBUG] Resource state not found for node "fivetran_destination.dest", instance fivetran_destination.dest
+2023-02-21T19:34:48.254+0530 [DEBUG] ProviderTransformer: "fivetran_destination.dest" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.254+0530 [DEBUG] ProviderTransformer: "fivetran_destination.dest (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.254+0530 [DEBUG] ProviderTransformer: "fivetran_group.group" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.254+0530 [DEBUG] ProviderTransformer: "fivetran_group.group (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "fivetran_destination.dest (expand)" references: []
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "var.secret" references: []
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "var.snowflake_pass" references: []
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "output.new_group_id (expand)" references: [fivetran_destination.dest (expand) fivetran_destination.dest fivetran_destination.dest]
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "fivetran_group.group" references: []
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "fivetran_destination.dest" references: [fivetran_group.group fivetran_group.group fivetran_group.group (expand) var.snowflake_pass]
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/fivetran/fivetran\"]" references: [var.secret var.key]
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "fivetran_group.group (expand)" references: []
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "var.key" references: []
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "local.version (expand)" references: []
+2023-02-21T19:34:48.254+0530 [DEBUG] ReferenceTransformer: "output.new_status (expand)" references: [fivetran_destination.dest (expand) fivetran_destination.dest fivetran_destination.dest]
+2023-02-21T19:34:48.255+0530 [DEBUG] pruneUnusedNodes: local.version (expand) is no longer needed, removing
+2023-02-21T19:34:48.256+0530 [INFO]  backend/local: apply calling Apply
+2023-02-21T19:34:48.256+0530 [DEBUG] Building and walking apply graph for NormalMode plan
+2023-02-21T19:34:48.256+0530 [DEBUG] Resource state not found for node "fivetran_group.group", instance fivetran_group.group
+2023-02-21T19:34:48.256+0530 [DEBUG] Resource state not found for node "fivetran_destination.dest", instance fivetran_destination.dest
+2023-02-21T19:34:48.257+0530 [DEBUG] ProviderTransformer: "fivetran_group.group (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.257+0530 [DEBUG] ProviderTransformer: "fivetran_destination.dest (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.257+0530 [DEBUG] ProviderTransformer: "fivetran_destination.dest" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.257+0530 [DEBUG] ProviderTransformer: "fivetran_group.group" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/fivetran/fivetran"]
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "fivetran_group.group (expand)" references: []
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "fivetran_destination.dest (expand)" references: []
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "var.snowflake_pass" references: []
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "var.key" references: []
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "local.version (expand)" references: []
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "fivetran_destination.dest" references: [fivetran_group.group (expand) fivetran_group.group fivetran_group.group var.snowflake_pass]
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/fivetran/fivetran\"]" references: [var.key var.secret]
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "var.secret" references: []
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "output.new_group_id (expand)" references: [fivetran_destination.dest (expand) fivetran_destination.dest fivetran_destination.dest]
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "output.new_status (expand)" references: [fivetran_destination.dest (expand) fivetran_destination.dest fivetran_destination.dest]
+2023-02-21T19:34:48.257+0530 [DEBUG] ReferenceTransformer: "fivetran_group.group" references: []
+2023-02-21T19:34:48.257+0530 [DEBUG] pruneUnusedNodes: local.version (expand) is no longer needed, removing
+2023-02-21T19:34:48.257+0530 [DEBUG] Starting graph walk: walkApply
+2023-02-21T19:34:48.258+0530 [DEBUG] created provider logger: level=debug
+2023-02-21T19:34:48.258+0530 [INFO]  provider: configuring client automatic mTLS
+2023-02-21T19:34:48.263+0530 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 args=[.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11]
+2023-02-21T19:34:48.265+0530 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 pid=32693
+2023-02-21T19:34:48.265+0530 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11
+2023-02-21T19:34:48.273+0530 [INFO]  provider.terraform-provider-fivetran_v0.6.11: configuring server automatic mTLS: timestamp=2023-02-21T19:34:48.273+0530
+2023-02-21T19:34:48.287+0530 [DEBUG] provider.terraform-provider-fivetran_v0.6.11: plugin address: address=/var/folders/5s/svmr4mgn3118j4xkvr02tkmr0000gn/T/plugin1612662402 network=unix timestamp=2023-02-21T19:34:48.287+0530
+2023-02-21T19:34:48.287+0530 [DEBUG] provider: using plugin: version=5
+2023-02-21T19:34:48.306+0530 [INFO]  Starting apply for fivetran_group.group
+2023-02-21T19:34:48.306+0530 [DEBUG] fivetran_group.group: applying the planned Create change
+2023-02-21T19:34:49.718+0530 [INFO]  Starting apply for fivetran_destination.dest
+2023-02-21T19:34:49.718+0530 [DEBUG] fivetran_destination.dest: applying the planned Create change
+2023-02-21T19:34:52.103+0530 [WARN]  Provider "provider[\"registry.terraform.io/fivetran/fivetran\"]" produced an unexpected new value for fivetran_destination.dest, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .config[0].bucket: was null, but now cty.StringVal("")
+      - .config[0].project_id: was null, but now cty.StringVal("")
+      - .config[0].connection_type: was null, but now cty.StringVal("Directly")
+      - .config[0].passphrase: inconsistent values for sensitive attribute
+      - .config[0].server_host_name: was null, but now cty.StringVal("")
+      - .config[0].tunnel_user: was null, but now cty.StringVal("")
+      - .config[0].personal_access_token: inconsistent values for sensitive attribute
+      - .config[0].role: was null, but now cty.StringVal("")
+      - .config[0].tunnel_port: was null, but now cty.StringVal("")
+      - .config[0].cluster_id: was null, but now cty.StringVal("")
+      - .config[0].cluster_region: was null, but now cty.StringVal("")
+      - .config[0].private_key: inconsistent values for sensitive attribute
+      - .config[0].tunnel_host: was null, but now cty.StringVal("")
+      - .config[0].create_external_tables: was null, but now cty.StringVal("")
+      - .config[0].data_set_location: was null, but now cty.StringVal("")
+      - .config[0].http_path: was null, but now cty.StringVal("")
+      - .config[0].catalog: was null, but now cty.StringVal("")
+      - .config[0].auth_type: was null, but now cty.StringVal("")
+      - .config[0].role_arn: inconsistent values for sensitive attribute
+      - .config[0].secret_key: inconsistent values for sensitive attribute
+      - .config[0].external_location: was null, but now cty.StringVal("")
+2023-02-21T19:34:52.110+0530 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2023-02-21T19:34:52.112+0530 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/fivetran/fivetran/0.6.11/darwin_arm64/terraform-provider-fivetran_v0.6.11 pid=32693
+2023-02-21T19:34:52.112+0530 [DEBUG] provider: plugin exited
