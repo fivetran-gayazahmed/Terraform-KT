@@ -15,8 +15,8 @@ resource "fivetran_connector" "tf_square" {
   }
 
   config {
-    client_id     = "sq0idp-WljsFtvVl79AHgCL4jl6gw"
-    client_secret = "sq0csp-KtvmxBI_xuYIxkNxa2hfHEfizTIqi4bne3XpOEUITAo"
+    client_id     = "######"
+    client_secret = "######"
   }
 
 }
