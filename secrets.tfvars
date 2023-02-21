@@ -1,2 +1,2 @@
-# api_key= "3pf8HZLeF3g0556Z"
-# api_secret = "4FJOPRMgDIaa3IajcP2NEzkdKdU8wVJC"
+api_key= "your_api_key"
+api_secret = "your_api_secret"
