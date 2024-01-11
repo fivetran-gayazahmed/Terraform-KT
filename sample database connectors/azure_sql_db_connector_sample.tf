@@ -3,7 +3,7 @@
 
 resource "fivetran_connector" "sql_db_via_terraform" {
 
-  group_id           = "clarinet_inheritance"
+  group_id           = "your_group_id"
   service            = "azure_sql_db"
   run_setup_tests    = true
   trust_certificates = true
