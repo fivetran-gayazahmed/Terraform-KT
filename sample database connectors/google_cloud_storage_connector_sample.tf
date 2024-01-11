@@ -3,16 +3,13 @@
 
 resource "fivetran_connector" "gcp_via_terraform" {
 
-  group_id          = "eventually_matching"
+  group_id          = "your_groupid"
   service           = "gcs"
-  sync_frequency    = 180
-  paused            = false
-  pause_after_trial = false
   run_setup_tests   = true
 
   destination_schema {
     name  = "gcs_terraform"
-    table = "v6_10"
+    table = "table_name"
   }
 
   config {
@@ -25,4 +22,11 @@ resource "fivetran_connector" "gcp_via_terraform" {
     on_error    = "fail"
 
   }
+}
+
+resource "fivetran_connector_schedule" "gcp_schedule" {
+  connector_id      = fivetran_connector.gcp_via_terraform.id
+  sync_frequency    = 60
+  paused            = false
+  pause_after_trial = false
 }
