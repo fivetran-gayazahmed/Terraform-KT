@@ -5,9 +5,6 @@ resource "fivetran_connector" "sql_db_via_terraform" {
 
   group_id           = "clarinet_inheritance"
   service            = "azure_sql_db"
-  sync_frequency     = 360
-  paused             = false
-  pause_after_trial  = false
   run_setup_tests    = true
   trust_certificates = true
 
@@ -24,5 +21,12 @@ resource "fivetran_connector" "sql_db_via_terraform" {
     host          = "sqlserver-5tran.database.windows.net"
     user          = "fivetran@sqlserver-5tran.database.windows.net"
   }
-
 }
+
+resource "fivetran_connector_schedule" "azure_db_schedule" {
+  connector_id      = fivetran_connector.sql_db_via_terraform.id
+  sync_frequency    = 60
+  paused            = false
+  pause_after_trial = false
+}
+
