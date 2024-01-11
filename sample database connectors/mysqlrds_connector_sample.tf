@@ -1,13 +1,10 @@
 
 // MySQL RDS db connector via Terraform
 
-resource "fivetran_connector" "connector" {
+resource "fivetran_connector" "mysql_connector" {
 
-  group_id           = "clarinet_inheritance"
+  group_id           = "your_group_id"
   service            = "mysql_rds"
-  sync_frequency     = 360
-  paused             = false
-  pause_after_trial  = false
   run_setup_tests    = true
   trust_certificates = true
 
@@ -23,4 +20,11 @@ resource "fivetran_connector" "connector" {
     password      = "XXXX"
     update_method = "BINLOG"
   }
+}
+
+resource "fivetran_connector_schedule" "mysql_db_schedule" {
+  connector_id      = fivetran_connector.mysql_connector.id
+  sync_frequency    = 60
+  paused            = false
+  pause_after_trial = false
 }
