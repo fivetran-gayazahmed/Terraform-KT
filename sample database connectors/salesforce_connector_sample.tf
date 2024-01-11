@@ -3,14 +3,9 @@
 
 resource "fivetran_connector" "salesforce_via_terraform" {
 
-  group_id           = "eventually_matching"
+  group_id           = "your_groupid"
   service            = "salesforce"
-  sync_frequency     = 180
-  paused             = false
-  pause_after_trial  = false
   run_setup_tests    = true
-  trust_certificates = true
-  trust_fingerprints = true
 
   destination_schema {
     name = "salesforce_terraform"
@@ -26,5 +21,11 @@ resource "fivetran_connector" "salesforce_via_terraform" {
     }
     refresh_token = "######"
   }
+}
 
+resource "fivetran_connector_schedule" "salesforce_schedule" {
+  connector_id      = fivetran_connector.salesforce_via_terraform.id
+  sync_frequency    = 60
+  paused            = false
+  pause_after_trial = false
 }
