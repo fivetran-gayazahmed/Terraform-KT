@@ -2,11 +2,8 @@
 
 resource "fivetran_connector" "email_via_terraform" {
 
-  group_id          = "eventually_matching"
+  group_id          = "your_groupid"
   service           = "email"
-  sync_frequency    = 15
-  paused            = true
-  pause_after_trial = false
   run_setup_tests   = false
 
   destination_schema {
@@ -14,15 +11,15 @@ resource "fivetran_connector" "email_via_terraform" {
     table = "table_name_01"
   }
   config {
-    pattern         = ""
     file_type       = "infer"
     compression     = "infer"
     on_error        = "fail"
-    archive_pattern = ""
-    null_sequence   = ""
-    delimiter       = ""
-    escape_char     = ""
-    skip_before     = "0"
-    skip_after      = "0"
   }
+}
+
+resource "fivetran_connector_schedule" "email_schedule" {
+  connector_id      = fivetran_connector.email_via_terraform.id
+  sync_frequency    = 60
+  paused            = false
+  pause_after_trial = false
 }
